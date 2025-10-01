@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamSecure - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login-style.css">
+    <style>
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            display: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .error-icon {
+            background-color: #dc3545;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .error-input {
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="logo-fixed">
+    <img src="images/logo examsecure.png" alt="ExamSecure Logo" style="height: 40px; margin-right: 12px; vertical-align: middle;">
+    <span class="logo-text">ExamSecure</span>
+</div>
+<div class="container">
+    <div class="left">
+        <div class="illustration">
+            <img src="images/person using phone.png" alt="Login Illustration" style="max-width: 90%; max-height: 90%;">
+        </div>
+    </div>
+    <div class="right">
+        <div class="form-title">Login to your account</div>
+        <div style="margin-bottom: 24px;">
+            Don't have an account? <a class="form-link" href="signup.html">Register now</a>
+        </div>
+        <div id="error-message" class="error-message" style="display: none;">
+            <span class="error-icon">!</span>
+            <span class="error-text"></span>
+        </div>
+        <form method="POST" action="auth/processLogin.php">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <a class="forgot-link" href="reset.html">Forgot password?</a>
+            <button class="login-btn" type="submit">Sign in</button>
+        </form>
+        <div class="divider">OR</div>
+        <div class="inst-email-text">Sign in using your institutional email:</div>
+        <button class="google-btn" type="button">
+            <img src="images/google logo.png" alt="Google logo">
+            CONTINUE WITH GOOGLE
+        </button>
+    </div>
+</div>
+<script src="js/login-functions.js"></script>
+</body>
+</html>
