@@ -1,0 +1,13 @@
+{
+  "name": "examsecure-blockchain",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Blockchain integration for ExamSecure",
+  "main": "alchemy.js",
+  "scripts": {
+    "test": "node alchemy.js"
+  },
+  "dependencies": {
+    "viem": "^2.0.0"
+  }
+}
