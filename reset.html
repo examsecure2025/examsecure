@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamSecure - Forgot Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset-style.css">
+    
+</head>
+<body>
+<div class="logo-fixed">
+    <img src="images/logo examsecure.png" alt="ExamSecure Logo" style="height: 40px; margin-right: 12px; vertical-align: middle;">
+    <span class="logo-text">ExamSecure</span>
+</div>
+<div class="container">
+    <div class="left">
+        <div class="illustration">
+            <img src="images/person using phone.png" alt="Forgot Password Illustration" style="max-width: 90%; max-height: 90%;">
+        </div>
+    </div>
+    <div class="right">
+        <div class="reset-form-title">Forgot password</div>
+        <div class="reset-form-subtitle">You will receive a link to reset your password.</div>
+        <form method="POST" action="reset.php">
+            <div class="reset-form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <button class="reset-btn" type="submit">Reset</button>
+            <a href="login.html" class="back-login-btn">Go back to login</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

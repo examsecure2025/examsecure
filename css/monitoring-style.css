@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #0a2240;
+    color: #fff;
+}
+
+.monitoring-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+.sidebar {
+    
+    width: 20vw;
+    background: #112a4d;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+    align-items: stretch;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 48px 32px 48px;
+    background: #0a2240;
+    min-width: 0;
+    margin-left: 20vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.header .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+.header .create-btn {
+    background: #ffd600;
+    color: #00194a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 36px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.header .create-btn:hover {
+    background: #ffe066;
+}
+.header .profile-icon {
+    background: #1a3760;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd600;
+    font-size: 1.7rem;
+    margin-left: 24px;
+}
+
+.monitoring-list-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    margin-top: 18px;
+}
+
+.monitoring-filters-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+.monitoring-filter-dropdown {
+    background: #153a6b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    outline: none;
+    margin-right: 0;
+    width: 25%;
+    min-width: 120px;
+}
+.monitoring-filter-dropdown:focus {
+    outline: 2px solid #ffd600;
+}
+.monitoring-search-bar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    margin-left: auto;
+}
+.monitoring-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2;
+}
+.monitoring-search-bar {
+    width: 100%;
+    background: #223a63;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px 10px 40px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin-left: 0;
+}
+.monitoring-search-bar::placeholder {
+    color: #b3c6e0;
+    opacity: 1;
+}
+
+.monitoring-refresh-btn {
+    background: #153a6b;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.5s ease;
+}
+.monitoring-refresh-btn:hover {
+    background: #1a4a8a;
+    transform: scale(1.05);
+}
+.monitoring-refresh-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+.monitoring-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.monitoring-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.monitoring-card {
+    background: #2051a4;
+    border-radius: 10px;
+    padding: 18px 24px 14px 24px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    cursor: pointer;
+}
+.monitoring-card:hover {
+    box-shadow: 0 4px 24px 0 rgba(32, 81, 164, 0.18);
+    background: #1a5bb8;
+    transform: translateY(-2px) scale(1.01);
+}
+.monitoring-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+.monitoring-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 12px;
+}
+.monitoring-card-date {
+    font-size: 1.05rem;
+    color: #b3c6e0;
+    font-weight: 500;
+}
+.monitoring-card-details {
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.monitoring-card-badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+.monitoring-status-badge {
+    background: #0a2240;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-right: 6px;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.09);
+}
+.monitoring-status-badge.active {
+    background: #1ed760;
+    color: #00194a;
+}
+.monitoring-status-badge.closed {
+    background: #b3c6e0;
+    color: #00194a;
+}
+.monitoring-code-badge {
+    background: #00194a;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-right: 6px;
+    letter-spacing: 0.04em;
+}
+.monitoring-details-link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+.monitoring-details-link:hover {
+    color: #ffd600;
+}
+.monitoring-details-link svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        padding: 18px 4vw 18px 4vw;
+    }
+    .header .title {
+        font-size: 1.4rem;
+    }
+    .monitoring-filters-row {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .monitoring-search-bar-wrapper {
+        width: 100%;
+    }
+    .monitoring-list {
+        gap: 10px;
+    }
+    .monitoring-card {
+        padding: 12px 10px 10px 10px;
+    }
+}
+
+/* No Assessments Message */
+.no-assessments-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: #0f2a4a;
+    border-radius: 12px;
+    border: 2px dashed #2a4a6b;
+    margin: 20px auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-assessments-icon {
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.no-assessments-message h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px 0;
+}
+
+.no-assessments-message p {
+    font-size: 1.1rem;
+    color: #b3c6e0;
+    margin: 0;
+    line-height: 1.5;
+}

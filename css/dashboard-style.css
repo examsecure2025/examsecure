@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #0a2240;
+    color: #fff;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 20vw;
+    background: #112a4d;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+    align-items: stretch;
+}
+.sidebar .logo-area {
+    display: flex;
+    align-items: center;
+    padding: 32px 0 32px 32px;
+    margin-bottom: 32px;
+    position: static;
+    background: none;
+}
+.sidebar .logo-area img {
+    height: 40px;
+    margin-right: 12px;
+}
+.sidebar .logo-area .logo-text {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    position: static;
+}
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 48px 0 0 0;
+    align-items: stretch;
+}
+.sidebar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0 16px 12px 16px;
+    transition: background 0.2s, color 0.2s;
+    background: none;
+    position: relative;
+}
+.sidebar nav a.active {
+    background: #2051a4;
+    color: #fff;
+}
+.sidebar nav a:hover {
+    background: #17305a;
+    color: #fff;
+}
+.sidebar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+}
+.sidebar-divider {
+    border-bottom: 2px solid #dcdee2;
+    margin: 18px 24px 18px 24px;
+}
+.logout-link {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 32px 32px 48px;
+    background: #0a2240;
+    min-width: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.header .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+.header .create-btn {
+    background: #ffe600;
+    color: #00194a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 36px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.header .create-btn:hover {
+    background: #ffe066;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: none;
+    margin-left: 8px;
+}
+.profile-icon svg {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+
+.recent-assessments-section {
+    background: #102a5c;
+    border-radius: 8px;
+    padding: 24px 24px 18px 24px;
+    margin-bottom: 32px;
+    overflow-x: hidden;
+}
+.recent-assessments-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.recent-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.01em;
+}
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 400;
+}
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.legend-dot.finished { background: #1ed760; }
+.legend-dot.answering { background: #ffd600; }
+.legend-dot.cheating { background: #ff4d4f; }
+
+.recent-assessments {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #153a6b #102a5c;
+}
+
+.recent-assessments::-webkit-scrollbar {
+    height: 8px;
+}
+
+.recent-assessments::-webkit-scrollbar-track {
+    background: #102a5c;
+    border-radius: 4px;
+}
+
+.recent-assessments::-webkit-scrollbar-thumb {
+    background: #153a6b;
+    border-radius: 4px;
+}
+
+.assessment-card {
+    background: #1651a4;
+    border-radius: 12px;
+    padding: 0;
+    min-width: 20%;
+    max-width: 35%;
+    flex: 0 0 auto;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    margin-bottom: 0;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+.assessment-card:hover {
+    box-shadow: 0 4px 24px 0 rgba(32, 81, 164, 0.18);
+    background: #1a5bb8;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.assessment-card-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 22px 24px 18px 24px;
+    gap: 32px;
+    
+}
+.assessment-info-block {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.assessment-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+}
+.assessment-divider {
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.assessment-info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 32px;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+.assessment-info-label {
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+.assessment-status-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 56px;
+   
+}
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.status-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #fff;
+}
+.status-dot.finished { background: #1ed760; }
+.status-dot.answering { background: #ffd600; }
+.status-dot.cheating { background: #ff4d4f; }
+.status-count {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-width: 28px;
+    text-align: right;
+    display: inline-block;
+}
+
+.cheating-alerts-section {
+    background: #102a5c;
+    border-radius: 8px;
+    padding: 24px 24px 18px 24px;
+    margin-bottom: 32px;
+}
+.cheating-alerts-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.cheating-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.01em;
+}
+.cheating-alerts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.cheating-alert {
+    background: #e53935;
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.09);
+}
+.cheating-alert .alert-icon {
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-right: 18px;
+    flex-shrink: 0;
+}
+.cheating-alert .alert-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cheating-alert .alert-action {
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+}
+.cheating-alert .alert-action a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.loading-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #b3c6e0;
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #25477a;
+    border-top: 2px solid #ffd600;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.no-data {
+    text-align: center;
+    color: #b3c6e0;
+    font-style: italic;
+    padding: 20px;
+    font-size: 0.95rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.assessment-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assessment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.dashboard-tables {
+    display: flex;
+    gap: 24px;
+}
+.dashboard-table {
+    background: #17305a;
+    border-radius: 12px;
+    padding: 18px 24px 12px 24px;
+    flex: 1;
+    min-width: 0;
+    color: #fff;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+.dashboard-table .table-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.dashboard-table .table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #223a63;
+}
+.dashboard-table .table-row:last-child {
+    border-bottom: none;
+}
+.dashboard-table .score {
+    font-weight: 700;
+    color: #ffd600;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1400px) {
+    .dashboard-tables {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .main-content {
+        padding: 18px 4vw 18px 4vw;
+    }
+    .recent-assessments {
+        flex-direction: row;
+        gap: 16px;
+        align-items: stretch;
+        overflow-x: auto;
+    }
+    .assessment-card {
+        min-width: 280px;
+        max-width: 320px;
+    }
+    .assessment-card-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px 12px 14px 12px;
+    }
+    .assessment-status-block {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+        min-width: unset;
+    }
+
+    .status-count {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-left: 1px;
+        min-width: 10px;
+        text-align: right;
+        display: inline-block;
+    }
+
+    
+}
+
+@media (max-width: 700px) {
+    .recent-assessments-section {
+        padding: 12px 4vw 10px 4vw;
+    }
+    .assessment-card-inner {
+        padding: 12px 4vw 10px 4vw;
+        gap: 10px;
+    }
+    .assessment-title {
+        font-size: 1.1rem;
+    }
+    .assessment-info-label, .assessment-info-row {
+        font-size: 0.95rem;
+    }
+    .status-dot {
+        width: 16px;
+        height: 16px;
+    }
+    .status-count {
+        font-size: 0.95rem;
+        min-width: 12px;
+    }
+}
+

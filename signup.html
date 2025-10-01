@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamSecure - Create Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/signup-style.css">
+    <style>
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .error-input {
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="logo-fixed">
+    <img src="images/logo examsecure.png" alt="ExamSecure Logo" style="height: 40px; margin-right: 12px; vertical-align: middle;">
+    <span class="logo-text">ExamSecure</span>
+</div>
+<div class="container">
+    <div class="left">
+        <div class="illustration">
+            <img src="images/person using phone.png" alt="Signup Illustration" style="max-width: 90%; max-height: 90%;">
+        </div>
+    </div>
+    <div class="right">
+        <div class="form-title">Create Account</div>
+        <div style="margin-bottom: 24px;">
+            Already have an account? <a class="form-link" href="login.html">Log in</a>
+        </div>
+        <form method="POST" action="auth/processSignup.php">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="middle_name">Middle Name (Optional)</label>
+                    <input type="text" id="middle_name" name="middle_name" placeholder="Enter your middle name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required placeholder="Enter your last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Create a password">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required placeholder="Re-enter your password">
+            </div>
+            <button class="signup-btn" type="submit">Sign up</button>
+        </form>
+        <div class="divider">OR</div>
+        <div class="inst-email-text">Sign up using your institutional email:</div>
+        <button class="google-btn" type="button">
+            <img src="images/google logo.png" alt="Google logo">
+            CONTINUE WITH GOOGLE
+        </button>
+    </div>
+</div>
+<script src="js/validate_signup.js"></script>
+<script src="js/signup-functions.js"></script>
+
+
+</body>
+</html>

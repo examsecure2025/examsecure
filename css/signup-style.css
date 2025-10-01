@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #f4f6fa;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.left { 
+    flex: 1;
+    background: #f4f6fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.logo-box {
+    background: #003366;
+    color: #ffd600;
+    font-weight: bold;
+    font-size: 2.2rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-right: 12px;
+}
+.logo-text {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+}
+.illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    
+}
+.illustration-text {
+    color: #333;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.right {
+    flex: 1;
+    background: #00194a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+    padding: 60px 40px;
+    min-width: 400px;
+}
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.form-link {
+    color: #b3c6e0;
+    text-decoration: underline;
+    font-size: 1rem;
+    margin-bottom: 32px;
+    display: inline-block;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #b3c6e0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    background:rgba(230, 236, 245, 0.39);
+    color: white;
+    margin-bottom: 2px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: 2px solid #ffd600;
+}
+input::placeholder {
+    color:rgba(255, 254, 250, 0.49) !important;
+    opacity: 1; /* Ensures full opacity in all browsers */
+}
+.signup-btn {
+    background: #ffd600;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.signup-btn:hover {
+    background: #ffe066;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #b3c6e0;
+}
+.divider:not(:empty)::before {
+    margin-right: .75em;
+}
+.divider:not(:empty)::after {
+    margin-left: .75em;
+}
+.google-btn {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #222;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+.google-btn img {
+    height: 22px;
+    margin-right: 12px;
+}
+.google-btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-effect 1s linear;
+    background-color: rgba(109, 109, 109, 0.548);
+    pointer-events: none;
+    z-index: 1;
+}
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+.inst-email-text {
+    color: #b3c6e0;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        min-width: unset;
+        width: 100%;
+        padding: 32px 16px;
+    }
+    .illustration {
+        width: 220px;
+        height: 220px;
+       
+    }
+}
+.logo-fixed {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+.logo-fixed .logo-text {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+}
+@media (max-width: 900px) {
+    .logo-fixed {
+        position: static;
+        margin-bottom: 16px;
+        justify-content: center;
+    }
+}
